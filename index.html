@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#FAF8F4">
+<meta name="theme-color" content="#08080B">
+<meta name="color-scheme" content="dark">
 <title>Websites built in a day. $50 a page. Neil Busque</title>
 <meta name="description" content="Productized website service for local businesses. Built in 24 hours. $50 a page. $50/mo hosting and management. Unlimited revisions until you approve. First 10 clients only.">
 
@@ -19,7 +20,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="/css/style.css">
 
@@ -28,23 +29,13 @@
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Local Business Website Build by Neil Busque",
-  "provider": {
-    "@type": "Person",
-    "name": "Neil Busque",
-    "url": "https://busqueneil.com"
-  },
+  "provider": { "@type": "Person", "name": "Neil Busque", "url": "https://busqueneil.com" },
   "description": "Productized website service for local businesses. Built in 24 hours. $50 a page. $50/mo hosting and management. Unlimited revisions until approval.",
   "areaServed": "United States",
   "offers": {
     "@type": "Offer",
-    "price": "50",
-    "priceCurrency": "USD",
-    "priceSpecification": {
-      "@type": "UnitPriceSpecification",
-      "price": "50",
-      "priceCurrency": "USD",
-      "unitText": "per page"
-    },
+    "price": "50", "priceCurrency": "USD",
+    "priceSpecification": { "@type": "UnitPriceSpecification", "price": "50", "priceCurrency": "USD", "unitText": "per page" },
     "availability": "https://schema.org/LimitedAvailability"
   }
 }
@@ -53,14 +44,110 @@
 
 <body>
 
+<!-- Reusable SVG sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+  <linearGradient id="grad-coral" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#E94F37"/>
+    <stop offset="100%" stop-color="#FF8A57"/>
+  </linearGradient>
+  <linearGradient id="grad-mix" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#E94F37"/>
+    <stop offset="100%" stop-color="#7C5CFF"/>
+  </linearGradient>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  </pattern>
+  <radialGradient id="orb-coral" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#E94F37" stop-opacity="0.55"/>
+    <stop offset="100%" stop-color="#E94F37" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="orb-purple" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#7C5CFF" stop-opacity="0.45"/>
+    <stop offset="100%" stop-color="#7C5CFF" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+
+<!-- Icon symbols (Lucide-style line icons) -->
+<symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+</symbol>
+<symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 8a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8z"/><path d="M16 13h2"/><path d="M3 8V6a2 2 0 0 1 2-2h11"/>
+</symbol>
+<symbol id="i-stack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 18l9 5 9-5"/>
+</symbol>
+<symbol id="i-unlock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v1"/>
+</symbol>
+<symbol id="i-trending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/>
+</symbol>
+<symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="6" y="3" width="12" height="18" rx="2"/><path d="M11 18h2"/>
+</symbol>
+<symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 12.5l4.5 4.5L19 7.5"/>
+</symbol>
+<symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 12h14"/><path d="M13 5l7 7-7 7"/>
+</symbol>
+<symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/>
+</symbol>
+<symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/>
+</symbol>
+<symbol id="i-x-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/>
+</symbol>
+<symbol id="i-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M14.7 6.3a4.5 4.5 0 0 1 6 6L18 15l-6-6 2.7-2.7z"/><path d="M12 9L4 17l3 3 8-8"/>
+</symbol>
+<symbol id="i-dumbbell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M6 6v12M18 6v12M3 9v6M21 9v6M6 12h12"/>
+</symbol>
+<symbol id="i-fork" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M8 3v6a3 3 0 1 0 6 0V3"/><path d="M11 12v9"/><path d="M17 3v6c0 1 .5 2 2 2v10"/>
+</symbol>
+<symbol id="i-scissors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.1 7.9L20 19M8.1 16.1L20 5"/>
+</symbol>
+<symbol id="i-hammer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M14 3l7 4-3 5-7-4 3-5z"/><path d="M11 8L4 17a2 2 0 0 0 3 3l9-7"/>
+</symbol>
+<symbol id="i-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/>
+</symbol>
+<symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.75-.85.74-2.15-.04-2.92a2.07 2.07 0 0 0-2.96-.08z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.9 12.9 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+</symbol>
+<symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>
+</symbol>
+<symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/>
+</symbol>
+<symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/>
+</symbol>
+<symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+  <path d="M5 12h14M12 5v14"/>
+</symbol>
+<symbol id="i-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+  <path d="M5 12h14"/>
+</symbol>
+</svg>
+
 <!-- Sticky bar -->
 <div class="sticky-bar" id="stickyBar">
   <div class="sticky-bar__inner">
     <div class="sticky-bar__left">
-      <span class="dot"></span>
-      <span class="sticky-bar__text"><strong>3 of 10 intro spots left.</strong><br>$50 a page until full.</span>
+      <span class="pulse-dot" aria-hidden="true"></span>
+      <span class="sticky-bar__text"><strong>3 of 10 intro spots left.</strong><span class="sticky-bar__sep"> · </span><span class="dim">$50 a page until full.</span></span>
     </div>
-    <a href="#form" class="sticky-bar__cta">Claim a spot</a>
+    <a href="#form" class="sticky-bar__cta">Claim a spot <svg class="ico ico--xs"><use href="#i-arrow-right"/></svg></a>
   </div>
 </div>
 
@@ -68,29 +155,43 @@
 
 <!-- Hero -->
 <section class="hero">
+  <div class="hero__bg" aria-hidden="true">
+    <div class="hero__orb hero__orb--a"></div>
+    <div class="hero__orb hero__orb--b"></div>
+    <div class="hero__orb hero__orb--c"></div>
+    <svg class="hero__grid" width="100%" height="100%">
+      <rect width="100%" height="100%" fill="url(#grid)"/>
+    </svg>
+    <div class="hero__noise"></div>
+  </div>
+
   <div class="container">
     <div class="hero__inner">
-      <span class="eyebrow">For local businesses</span>
-      <h1 class="display">A real website for your business. Built in a day. <span class="accent">$50&nbsp;a&nbsp;page.</span></h1>
+      <div class="hero__badge">
+        <span class="pulse-dot pulse-dot--sm"></span>
+        <span>Now taking 10 launch clients</span>
+      </div>
+      <h1 class="display display--xl">A real website for your business. Built in a day. <span class="gradient-text">$50&nbsp;a&nbsp;page.</span></h1>
       <p class="hero__sub">Not the AI slop you've been pitched. AI is how I build fast. Knowing what good looks like is how I get it right. You approve every line and every pixel before it goes live.</p>
       <div class="hero__ctas">
-        <a href="#form" class="btn btn--primary">Get a free quote</a>
-        <a href="#process" class="btn btn--ghost">See how it works</a>
+        <a href="#form" class="btn btn--primary btn--lg">Get a free quote <svg class="ico ico--sm"><use href="#i-arrow-right"/></svg></a>
+        <a href="#process" class="btn btn--glass btn--lg">See how it works</a>
       </div>
       <ul class="trust-strip">
-        <li>Built in 24 hours from approval</li>
-        <li>$50 a page during launch</li>
-        <li>$50/mo hosting and management</li>
-        <li>Unlimited revisions until you say ship it</li>
+        <li><svg class="ico ico--xs"><use href="#i-check"/></svg> Built in 24 hours from approval</li>
+        <li><svg class="ico ico--xs"><use href="#i-check"/></svg> $50 a page during launch</li>
+        <li><svg class="ico ico--xs"><use href="#i-check"/></svg> $50/mo hosting and management</li>
+        <li><svg class="ico ico--xs"><use href="#i-check"/></svg> Unlimited revisions until you say ship it</li>
       </ul>
     </div>
   </div>
 </section>
 
 <!-- Been here before -->
-<section class="section section--cream" id="problem">
+<section class="section section--problem" id="problem">
   <div class="container container--narrow">
-    <h2 class="display">You've been here before, haven't you?</h2>
+    <span class="eyebrow"><span class="eyebrow__dot"></span> The problem</span>
+    <h2 class="display">You've been here before, <span class="gradient-text">haven't you?</span></h2>
     <div class="prose">
       <p>You know you need a real website. You've known for a while.</p>
       <p>You asked an agency. They came back with an $8,000 quote and a 12-week timeline. They wanted a discovery workshop before anyone touched a keyboard.</p>
@@ -100,14 +201,14 @@
     </div>
 
     <h3 class="h3 mt-large">Every week this drags on, here's what's happening.</h3>
-    <ul class="bullet-list">
-      <li>A customer Googles you. They land on a broken Wix page that loads in eight seconds. They tap the back button. They go to your competitor.</li>
-      <li>A new lead tries to find your hours. They can't. They call the shop down the street.</li>
-      <li>Your Google Business Profile sends people to a homepage that hasn't been updated in three years. The phone number on it is wrong.</li>
-      <li>You meet someone at a chamber event. They ask for your website. You make a face. The conversation ends.</li>
+    <ul class="impact-list">
+      <li><svg class="ico ico--md text-coral"><use href="#i-x-circle"/></svg> A customer Googles you. They land on a broken Wix page that loads in eight seconds. They tap back. They go to your competitor.</li>
+      <li><svg class="ico ico--md text-coral"><use href="#i-x-circle"/></svg> A new lead tries to find your hours. They can't. They call the shop down the street.</li>
+      <li><svg class="ico ico--md text-coral"><use href="#i-x-circle"/></svg> Your Google Business Profile sends people to a homepage that hasn't been updated in three years. The phone number on it is wrong.</li>
+      <li><svg class="ico ico--md text-coral"><use href="#i-x-circle"/></svg> You meet someone at a chamber event. They ask for your website. You make a face. The conversation ends.</li>
     </ul>
 
-    <p class="prose mt-large"><strong>None of that is your fault.</strong> The market priced a real website like a luxury good for the last decade. That changed. Here's how.</p>
+    <p class="prose mt-large"><strong class="text-bright">None of that is your fault.</strong> The market priced a real website like a luxury good for the last decade. That changed. Here's how.</p>
   </div>
 </section>
 
@@ -115,31 +216,38 @@
 <section class="section" id="benefits">
   <div class="container">
     <div class="section-head">
-      <h2 class="display">Why this is right when you're just starting out.</h2>
+      <span class="eyebrow"><span class="eyebrow__dot"></span> Why it works</span>
+      <h2 class="display">Why this is right when you're <span class="gradient-text">just starting out.</span></h2>
       <p class="section-sub">Most agencies want you to spend $5,000 before your business has earned its first dollar. This doesn't.</p>
     </div>
     <div class="grid grid--3">
-      <div class="card">
+      <div class="card card--glass">
+        <div class="card__icon"><svg><use href="#i-clock"/></svg></div>
         <h3 class="h3">Online this week, not next quarter.</h3>
         <p>Three months is a long time to lose calls to a competitor with a real site. You go live in 24 hours from approval.</p>
       </div>
-      <div class="card">
+      <div class="card card--glass">
+        <div class="card__icon"><svg><use href="#i-wallet"/></svg></div>
         <h3 class="h3">Low enough to test the market.</h3>
         <p>Most local business sites are 4 to 7 pages. That's $200 to $350 to launch. Less than the deposit most agencies ask for to start a project.</p>
       </div>
-      <div class="card">
+      <div class="card card--glass">
+        <div class="card__icon"><svg><use href="#i-stack"/></svg></div>
         <h3 class="h3">One bill, not five.</h3>
         <p>Hosting, SSL, updates, backups, and small swaps are all covered by the $50/mo plan. You don't need to learn what any of that means.</p>
       </div>
-      <div class="card">
+      <div class="card card--glass">
+        <div class="card__icon"><svg><use href="#i-unlock"/></svg></div>
         <h3 class="h3">No contract. Ever.</h3>
         <p>Pay month to month. Cancel anytime. Keep the files. Use it as long as it's working for you.</p>
       </div>
-      <div class="card">
+      <div class="card card--glass">
+        <div class="card__icon"><svg><use href="#i-trending"/></svg></div>
         <h3 class="h3">Built to grow with the business.</h3>
         <p>Start with three pages. Add a services page next month. Same flat rate. No new project fees, no scope theater.</p>
       </div>
-      <div class="card">
+      <div class="card card--glass">
+        <div class="card__icon"><svg><use href="#i-phone"/></svg></div>
         <h3 class="h3">Built for a phone first.</h3>
         <p>Eight in ten of your customers find you on their phone. Loads fast. Buttons fit a thumb. Contact info is one tap away. Tested on a real device before launch.</p>
       </div>
@@ -148,44 +256,45 @@
 </section>
 
 <!-- Mechanism -->
-<section class="section section--ink" id="mechanism">
+<section class="section section--mechanism" id="mechanism">
   <div class="container">
-    <div class="section-head section-head--light">
-      <h2 class="display">How this can actually be $50 a page.</h2>
+    <div class="section-head">
+      <span class="eyebrow"><span class="eyebrow__dot"></span> The mechanism</span>
+      <h2 class="display">How this can actually be <span class="gradient-text">$50 a page.</span></h2>
       <p class="section-sub">Not magic. Not a loss leader. The numbers work because of five specific things.</p>
     </div>
     <ol class="mechanism-list">
-      <li>
-        <span class="mechanism-list__n">01</span>
-        <div>
+      <li class="mech-item">
+        <span class="mech-item__n">01</span>
+        <div class="mech-item__body">
           <h3 class="h3">No agency overhead.</h3>
           <p>I am one person. There is no account manager. No project manager. No salesperson. No office in a glass building. The whole reason an agency quotes you $8,000 is to pay the seven people who got on the call to sell it to you.</p>
         </div>
       </li>
-      <li>
-        <span class="mechanism-list__n">02</span>
-        <div>
+      <li class="mech-item">
+        <span class="mech-item__n">02</span>
+        <div class="mech-item__body">
           <h3 class="h3">AI builds the boring 70 percent.</h3>
           <p>The HTML, the CSS, the first draft of every page. AI handles it in minutes, not days. I spend my time on the part that matters: making it actually work, fixing what the AI got wrong, and making sure your site doesn't look like everyone else's.</p>
         </div>
       </li>
-      <li>
-        <span class="mechanism-list__n">03</span>
-        <div>
+      <li class="mech-item">
+        <span class="mech-item__n">03</span>
+        <div class="mech-item__body">
           <h3 class="h3">No discovery workshops.</h3>
           <p>A 15-minute call replaces the four-week discovery phase. I ask the questions that matter for a local business website. You answer. We move on.</p>
         </div>
       </li>
-      <li>
-        <span class="mechanism-list__n">04</span>
-        <div>
+      <li class="mech-item">
+        <span class="mech-item__n">04</span>
+        <div class="mech-item__body">
           <h3 class="h3">Static and fast by default.</h3>
           <p>No WordPress to maintain. No database to back up. No plugins to break. The site is plain HTML and CSS served from a global edge network. That is why hosting can be $50 a month and not $200.</p>
         </div>
       </li>
-      <li>
-        <span class="mechanism-list__n">05</span>
-        <div>
+      <li class="mech-item">
+        <span class="mech-item__n">05</span>
+        <div class="mech-item__body">
           <h3 class="h3">Templates that aren't templates.</h3>
           <p>I've built a library of components I trust: hero sections, service grids, contact blocks, testimonials, FAQs. I assemble your site from pieces I already know work. You get a custom site. I save twenty hours of from-scratch design.</p>
         </div>
@@ -198,7 +307,8 @@
 <section class="section" id="comparison">
   <div class="container">
     <div class="section-head">
-      <h2 class="display">Stacked against the other ways to get a website.</h2>
+      <span class="eyebrow"><span class="eyebrow__dot"></span> The alternatives</span>
+      <h2 class="display">Stacked against the other ways to <span class="gradient-text">get a website.</span></h2>
       <p class="section-sub">Here are your real options, side by side.</p>
     </div>
     <div class="comparison-table">
@@ -247,32 +357,37 @@
 </section>
 
 <!-- Process -->
-<section class="section section--cream" id="process">
+<section class="section section--process" id="process">
   <div class="container">
     <div class="section-head">
-      <h2 class="display">Four steps. Most of it happens in 24 hours.</h2>
+      <span class="eyebrow"><span class="eyebrow__dot"></span> The process</span>
+      <h2 class="display">Four steps. Most of it happens in <span class="gradient-text">24 hours.</span></h2>
       <p class="section-sub">No discovery workshops. No 12-week timelines. No 40-page proposals.</p>
     </div>
     <ol class="process-grid">
       <li class="process-step">
+        <div class="process-step__icon"><svg><use href="#i-edit"/></svg></div>
         <span class="process-step__n">01</span>
         <h3 class="h3">Fill out the form</h3>
         <p>Two minutes. Tell me your business, what you need, and where I can reach you.</p>
       </li>
       <li class="process-step">
+        <div class="process-step__icon"><svg><use href="#i-phone"/></svg></div>
         <span class="process-step__n">02</span>
         <h3 class="h3">Quick call</h3>
         <p>15 to 20 minutes. I'll ask what you want, what pages you need, and what your customers actually look for when they find you.</p>
       </li>
       <li class="process-step">
+        <div class="process-step__icon"><svg><use href="#i-mail"/></svg></div>
         <span class="process-step__n">03</span>
         <h3 class="h3">Quote in your inbox</h3>
         <p>A flat number. $50 a page. No surprises, no upsells, no per-revision fees. If it's a fit, you say yes.</p>
       </li>
       <li class="process-step">
+        <div class="process-step__icon"><svg><use href="#i-rocket"/></svg></div>
         <span class="process-step__n">04</span>
         <h3 class="h3">Live in 24 hours</h3>
-        <p>You get the preview link the next day. Revise as much as you want. Once you approve, the site goes live on your domain with hosting and an SSL certificate handled.</p>
+        <p>Preview link the next day. Revise as much as you want. Once you approve, the site goes live on your domain with hosting and SSL handled.</p>
       </li>
     </ol>
   </div>
@@ -282,15 +397,19 @@
 <section class="section" id="examples">
   <div class="container">
     <div class="section-head">
-      <h2 class="display">What this looks like for your kind of business.</h2>
+      <span class="eyebrow"><span class="eyebrow__dot"></span> Examples</span>
+      <h2 class="display">What this looks like for <span class="gradient-text">your kind of business.</span></h2>
       <p class="section-sub">Five common builds. Yours will look similar. Most local business sites are 4 to 7 pages.</p>
     </div>
     <div class="examples-grid">
 
       <article class="example">
         <header>
-          <h3 class="h3">Plumbing or HVAC</h3>
-          <div class="example__meta"><span>5 pages</span><span class="dot dot--small"></span><strong>$250 build</strong><span class="dot dot--small"></span><span>$50/mo</span></div>
+          <div class="example__icon"><svg><use href="#i-wrench"/></svg></div>
+          <div>
+            <h3 class="h3">Plumbing or HVAC</h3>
+            <div class="example__meta"><span class="mono">5 pages</span> <span class="dim">·</span> <strong>$250 build</strong> <span class="dim">·</span> <span class="mono">$50/mo</span></div>
+          </div>
         </header>
         <div class="example__pages"><span>Home</span><span>Services</span><span>Service Area</span><span>Reviews</span><span>Contact</span></div>
         <ul class="check-list">
@@ -304,8 +423,11 @@
 
       <article class="example">
         <header>
-          <h3 class="h3">Gym or studio</h3>
-          <div class="example__meta"><span>5 pages</span><span class="dot dot--small"></span><strong>$250 build</strong><span class="dot dot--small"></span><span>$50/mo</span></div>
+          <div class="example__icon"><svg><use href="#i-dumbbell"/></svg></div>
+          <div>
+            <h3 class="h3">Gym or studio</h3>
+            <div class="example__meta"><span class="mono">5 pages</span> <span class="dim">·</span> <strong>$250 build</strong> <span class="dim">·</span> <span class="mono">$50/mo</span></div>
+          </div>
         </header>
         <div class="example__pages"><span>Home</span><span>Classes</span><span>Membership</span><span>About</span><span>Contact</span></div>
         <ul class="check-list">
@@ -319,8 +441,11 @@
 
       <article class="example">
         <header>
-          <h3 class="h3">Restaurant or cafe</h3>
-          <div class="example__meta"><span>5 pages</span><span class="dot dot--small"></span><strong>$250 build</strong><span class="dot dot--small"></span><span>$50/mo</span></div>
+          <div class="example__icon"><svg><use href="#i-fork"/></svg></div>
+          <div>
+            <h3 class="h3">Restaurant or cafe</h3>
+            <div class="example__meta"><span class="mono">5 pages</span> <span class="dim">·</span> <strong>$250 build</strong> <span class="dim">·</span> <span class="mono">$50/mo</span></div>
+          </div>
         </header>
         <div class="example__pages"><span>Home</span><span>Menu</span><span>Hours and Location</span><span>About</span><span>Contact</span></div>
         <ul class="check-list">
@@ -334,8 +459,11 @@
 
       <article class="example">
         <header>
-          <h3 class="h3">Salon or barbershop</h3>
-          <div class="example__meta"><span>5 pages</span><span class="dot dot--small"></span><strong>$250 build</strong><span class="dot dot--small"></span><span>$50/mo</span></div>
+          <div class="example__icon"><svg><use href="#i-scissors"/></svg></div>
+          <div>
+            <h3 class="h3">Salon or barbershop</h3>
+            <div class="example__meta"><span class="mono">5 pages</span> <span class="dim">·</span> <strong>$250 build</strong> <span class="dim">·</span> <span class="mono">$50/mo</span></div>
+          </div>
         </header>
         <div class="example__pages"><span>Home</span><span>Services</span><span>Stylists</span><span>Booking</span><span>Contact</span></div>
         <ul class="check-list">
@@ -349,8 +477,11 @@
 
       <article class="example">
         <header>
-          <h3 class="h3">Contractor or trades</h3>
-          <div class="example__meta"><span>5 pages</span><span class="dot dot--small"></span><strong>$250 build</strong><span class="dot dot--small"></span><span>$50/mo</span></div>
+          <div class="example__icon"><svg><use href="#i-hammer"/></svg></div>
+          <div>
+            <h3 class="h3">Contractor or trades</h3>
+            <div class="example__meta"><span class="mono">5 pages</span> <span class="dim">·</span> <strong>$250 build</strong> <span class="dim">·</span> <span class="mono">$50/mo</span></div>
+          </div>
         </header>
         <div class="example__pages"><span>Home</span><span>Services</span><span>Portfolio</span><span>About</span><span>Contact</span></div>
         <ul class="check-list">
@@ -368,27 +499,28 @@
 </section>
 
 <!-- Included -->
-<section class="section section--cream" id="included">
+<section class="section section--included" id="included">
   <div class="container">
     <div class="section-head">
-      <h2 class="display">What's on every single site, no matter what you sell.</h2>
+      <span class="eyebrow"><span class="eyebrow__dot"></span> What's in the box</span>
+      <h2 class="display">What's on every single site, <span class="gradient-text">no matter what you sell.</span></h2>
       <p class="section-sub">Whether you need three pages or twelve, all of this is in the box.</p>
     </div>
     <ul class="included-grid">
-      <li>Built mobile-first and tested on a real phone</li>
-      <li>Custom domain, SSL, and DNS setup handled for you</li>
-      <li>Contact form that emails you the moment a lead comes in</li>
-      <li>Google Business Profile embed and Maps link</li>
-      <li>Click-to-call and click-to-text buttons</li>
-      <li>Reviews section ready for your real testimonials</li>
-      <li>Hours, address, and service area in the footer</li>
-      <li>Privacy policy and terms drafted for you</li>
-      <li>Basic on-page SEO so you show up in local search</li>
-      <li>Local schema markup (LocalBusiness, Service, FAQ)</li>
-      <li>Loads in under two seconds on a phone</li>
-      <li>Easy edits anytime by email or text</li>
-      <li>Hosted on infrastructure used by Netflix and the New York Times</li>
-      <li>404 and thank-you pages designed, not default</li>
+      <li><svg class="ico ico--sm text-coral"><use href="#i-check"/></svg> Built mobile-first and tested on a real phone</li>
+      <li><svg class="ico ico--sm text-coral"><use href="#i-check"/></svg> Custom domain, SSL, and DNS setup handled for you</li>
+      <li><svg class="ico ico--sm text-coral"><use href="#i-check"/></svg> Contact form that emails you the moment a lead comes in</li>
+      <li><svg class="ico ico--sm text-coral"><use href="#i-check"/></svg> Google Business Profile embed and Maps link</li>
+      <li><svg class="ico ico--sm text-coral"><use href="#i-check"/></svg> Click-to-call and click-to-text buttons</li>
+      <li><svg class="ico ico--sm text-coral"><use href="#i-check"/></svg> Reviews section ready for your real testimonials</li>
+      <li><svg class="ico ico--sm text-coral"><use href="#i-check"/></svg> Hours, address, and service area in the footer</li>
+      <li><svg class="ico ico--sm text-coral"><use href="#i-check"/></svg> Privacy policy and terms drafted for you</li>
+      <li><svg class="ico ico--sm text-coral"><use href="#i-check"/></svg> Basic on-page SEO so you show up in local search</li>
+      <li><svg class="ico ico--sm text-coral"><use href="#i-check"/></svg> Local schema markup (LocalBusiness, Service, FAQ)</li>
+      <li><svg class="ico ico--sm text-coral"><use href="#i-check"/></svg> Loads in under two seconds on a phone</li>
+      <li><svg class="ico ico--sm text-coral"><use href="#i-check"/></svg> Easy edits anytime by email or text</li>
+      <li><svg class="ico ico--sm text-coral"><use href="#i-check"/></svg> Hosted on infrastructure used by Netflix and the NYT</li>
+      <li><svg class="ico ico--sm text-coral"><use href="#i-check"/></svg> 404 and thank-you pages designed, not default</li>
     </ul>
   </div>
 </section>
@@ -397,12 +529,14 @@
 <section class="section" id="pricing">
   <div class="container">
     <div class="section-head">
-      <h2 class="display">Plain pricing. No surprises.</h2>
+      <span class="eyebrow"><span class="eyebrow__dot"></span> Pricing</span>
+      <h2 class="display">Plain pricing. <span class="gradient-text">No surprises.</span></h2>
       <p class="section-sub">Here is the whole ledger.</p>
     </div>
     <div class="pricing-grid">
 
-      <div class="pricing-card">
+      <div class="pricing-card pricing-card--featured">
+        <div class="pricing-card__glow" aria-hidden="true"></div>
         <span class="pricing-card__label">Build</span>
         <div class="pricing-card__price">
           <span class="pricing-card__amount">$50</span>
@@ -416,10 +550,10 @@
           <li>Domain, SSL, and contact form set up for you</li>
           <li>Privacy and terms drafted</li>
         </ul>
-        <a href="#form" class="btn btn--primary btn--block">Claim a spot</a>
+        <a href="#form" class="btn btn--primary btn--block">Claim a spot <svg class="ico ico--sm"><use href="#i-arrow-right"/></svg></a>
       </div>
 
-      <div class="pricing-card pricing-card--secondary">
+      <div class="pricing-card">
         <span class="pricing-card__label">Hosting and management</span>
         <div class="pricing-card__price">
           <span class="pricing-card__amount">$50</span>
@@ -433,7 +567,7 @@
           <li>Uptime monitoring and a quarterly performance check</li>
           <li>Reply within the same business day</li>
         </ul>
-        <a href="#form" class="btn btn--ghost btn--block">Get a quote</a>
+        <a href="#form" class="btn btn--glass btn--block">Get a quote</a>
       </div>
 
     </div>
@@ -442,11 +576,12 @@
 </section>
 
 <!-- About -->
-<section class="section section--cream" id="about">
+<section class="section section--about" id="about">
   <div class="container container--narrow">
-    <h2 class="display">Who is actually building this.</h2>
+    <span class="eyebrow"><span class="eyebrow__dot"></span> About</span>
+    <h2 class="display">Who is <span class="gradient-text">actually building this.</span></h2>
     <p class="prose">I'm Neil Busque. I build websites for local businesses and the people running them. I've shipped on WordPress, Shopify, GoHighLevel, Webflow, and a stack of less-fun platforms. I started this offer because the gap between what a local business actually needs and what an agency wants to sell them has been wide for a long time. AI closed it. I'm passing the savings on while I fill the first 10 spots.</p>
-    <a href="https://busqueneil.com" class="btn btn--ghost mt-medium" target="_blank" rel="noopener">See my work at busqueneil.com →</a>
+    <a href="https://busqueneil.com" class="btn btn--glass mt-medium" target="_blank" rel="noopener">See my work at busqueneil.com <svg class="ico ico--sm"><use href="#i-arrow-right"/></svg></a>
   </div>
 </section>
 
@@ -454,22 +589,23 @@
 <section class="section" id="guarantee">
   <div class="container">
     <div class="section-head">
-      <h2 class="display">You take on zero risk.</h2>
+      <span class="eyebrow"><span class="eyebrow__dot"></span> The guarantee</span>
+      <h2 class="display">You take on <span class="gradient-text">zero risk.</span></h2>
       <p class="section-sub">Three rules. They are not in the fine print. They are the deal.</p>
     </div>
     <div class="risk-grid">
       <div class="risk-card">
-        <span class="risk-card__icon" aria-hidden="true">01</span>
-        <h3 class="h3">You don't pay the build fee until you approve the site.</h3>
+        <div class="card__icon"><svg><use href="#i-shield"/></svg></div>
+        <h3 class="h3">You don't pay until you approve.</h3>
         <p>Quote first, build second, approval third, invoice last. If we get to the preview and you hate it, you owe nothing for the build. No partial fees, no deposit forfeit.</p>
       </div>
       <div class="risk-card">
-        <span class="risk-card__icon" aria-hidden="true">02</span>
-        <h3 class="h3">Unlimited revisions until you say ship it.</h3>
+        <div class="card__icon"><svg><use href="#i-refresh"/></svg></div>
+        <h3 class="h3">Unlimited revisions until you ship it.</h3>
         <p>Headline wrong? Colors off? Section in the wrong order? Tell me. Fixed same day in most cases. No per-revision charges. No "that's a scope change" email.</p>
       </div>
       <div class="risk-card">
-        <span class="risk-card__icon" aria-hidden="true">03</span>
+        <div class="card__icon"><svg><use href="#i-unlock"/></svg></div>
         <h3 class="h3">No contract on hosting.</h3>
         <p>Pay month to month. Cancel anytime. If you cancel, you keep the site files. I'll send you a zip the same day. No hostage situations.</p>
       </div>
@@ -478,16 +614,17 @@
 </section>
 
 <!-- Founder note -->
-<section class="section section--ink" id="founder">
+<section class="section section--founder" id="founder">
   <div class="container container--narrow">
-    <h2 class="display">Why I'm doing this at this price.</h2>
-    <div class="prose prose--light">
+    <span class="eyebrow"><span class="eyebrow__dot"></span> Founder note</span>
+    <h2 class="display">Why I'm doing this <span class="gradient-text">at this price.</span></h2>
+    <div class="prose">
       <p>Honest answer: this offer is new. I'm taking the first 10 clients at $50 a page because that's how I'm going to build the case studies that let me charge what a normal agency charges.</p>
       <p>You get a real website at intro pricing. I get a portfolio. That's the trade.</p>
       <p>Once 10 spots fill, the price moves to $150 to $300 a page. The hosting plan stays at $50 a month for everyone who got in during launch. That's locked.</p>
-      <p>If you're on the fence, this is the cheapest this offer will ever be. Once the spots are gone, they're gone.</p>
+      <p><strong class="text-bright">If you're on the fence, this is the cheapest this offer will ever be. Once the spots are gone, they're gone.</strong></p>
     </div>
-    <a href="#form" class="btn btn--accent mt-large">Claim one of the 10 spots</a>
+    <a href="#form" class="btn btn--primary btn--lg mt-large">Claim one of the 10 spots <svg class="ico ico--sm"><use href="#i-arrow-right"/></svg></a>
   </div>
 </section>
 
@@ -495,55 +632,56 @@
 <section class="section" id="faq">
   <div class="container container--narrow">
     <div class="section-head">
-      <h2 class="display">Questions I keep getting.</h2>
+      <span class="eyebrow"><span class="eyebrow__dot"></span> FAQ</span>
+      <h2 class="display">Questions I <span class="gradient-text">keep getting.</span></h2>
     </div>
     <div class="faq-list">
       <details class="faq-item">
-        <summary><span>Is this really $50 a page?</span><span class="faq-icon" aria-hidden="true">+</span></summary>
+        <summary><span>Is this really $50 a page?</span><span class="faq-icon"><svg class="ico ico--sm"><use href="#i-plus"/></svg></span></summary>
         <div class="faq-body">Yes. Flat rate during launch. Most local business sites are 4 to 7 pages. A 5-page site is $250 to build and then $50/mo to keep it running. After 10 clients sign up, the build price moves to $150 to $300 per page.</div>
       </details>
       <details class="faq-item">
-        <summary><span>Is this AI doing the work or is it you?</span><span class="faq-icon" aria-hidden="true">+</span></summary>
+        <summary><span>Is this AI doing the work or is it you?</span><span class="faq-icon"><svg class="ico ico--sm"><use href="#i-plus"/></svg></span></summary>
         <div class="faq-body">Both. AI handles the first 60 to 80 percent of the build. I handle the part where it has to actually work, look right, load fast, and convert. Same way a chef uses a stove. The stove does not make the meal.</div>
       </details>
       <details class="faq-item">
-        <summary><span>Can I really get it live in 24 hours?</span><span class="faq-icon" aria-hidden="true">+</span></summary>
+        <summary><span>Can I really get it live in 24 hours?</span><span class="faq-icon"><svg class="ico ico--sm"><use href="#i-plus"/></svg></span></summary>
         <div class="faq-body">Yes, assuming you can get me your content, photos, and feedback in that window. Most sites go live the next day. A few take 48 hours when the client is slow to reply. None take weeks.</div>
       </details>
       <details class="faq-item">
-        <summary><span>What platform is it built on?</span><span class="faq-icon" aria-hidden="true">+</span></summary>
+        <summary><span>What platform is it built on?</span><span class="faq-icon"><svg class="ico ico--sm"><use href="#i-plus"/></svg></span></summary>
         <div class="faq-body">Most local business sites I build are static, fast, and hosted on Netlify. If you need ecommerce, I'll build it on Shopify. If you need a full CRM and booking system, I'll build it on GoHighLevel. We pick what fits on the call.</div>
       </details>
       <details class="faq-item">
-        <summary><span>What if I want to leave later?</span><span class="faq-icon" aria-hidden="true">+</span></summary>
+        <summary><span>What if I want to leave later?</span><span class="faq-icon"><svg class="ico ico--sm"><use href="#i-plus"/></svg></span></summary>
         <div class="faq-body">You own the site. Cancel hosting anytime and I'll send you the files. No exit fees. No hostage situations.</div>
       </details>
       <details class="faq-item">
-        <summary><span>Do you do logos or graphics?</span><span class="faq-icon" aria-hidden="true">+</span></summary>
+        <summary><span>Do you do logos or graphics?</span><span class="faq-icon"><svg class="ico ico--sm"><use href="#i-plus"/></svg></span></summary>
         <div class="faq-body">Light logo work is included if you don't have one. Full branding is a separate quote. Stock photos and icons are included.</div>
       </details>
       <details class="faq-item">
-        <summary><span>What if I need changes after launch?</span><span class="faq-icon" aria-hidden="true">+</span></summary>
+        <summary><span>What if I need changes after launch?</span><span class="faq-icon"><svg class="ico ico--sm"><use href="#i-plus"/></svg></span></summary>
         <div class="faq-body">Small swaps under 15 minutes are included with the $50/mo plan. Bigger work (new pages, redesigns) is quoted on the spot at $50 a page during the launch window.</div>
       </details>
       <details class="faq-item">
-        <summary><span>How does the 15-minute call work?</span><span class="faq-icon" aria-hidden="true">+</span></summary>
+        <summary><span>How does the 15-minute call work?</span><span class="faq-icon"><svg class="ico ico--sm"><use href="#i-plus"/></svg></span></summary>
         <div class="faq-body">I call or video chat at a time that works for you. I ask about your business, your customers, and what pages you need. No pitch. No script. You leave the call with a clear sense of what your site will be.</div>
       </details>
       <details class="faq-item">
-        <summary><span>Do I need to have all the content ready?</span><span class="faq-icon" aria-hidden="true">+</span></summary>
+        <summary><span>Do I need to have all the content ready?</span><span class="faq-icon"><svg class="ico ico--sm"><use href="#i-plus"/></svg></span></summary>
         <div class="faq-body">No. I'll pull what I can from your Google Business Profile, your Facebook page, and any existing site. I'll ask you for what's missing. You approve it all before launch.</div>
       </details>
       <details class="faq-item">
-        <summary><span>I already have a domain. Can I keep it?</span><span class="faq-icon" aria-hidden="true">+</span></summary>
+        <summary><span>I already have a domain. Can I keep it?</span><span class="faq-icon"><svg class="ico ico--sm"><use href="#i-plus"/></svg></span></summary>
         <div class="faq-body">Yes. I'll point your existing domain at the new site or move it for you. No interruption to your email.</div>
       </details>
       <details class="faq-item">
-        <summary><span>What if my business is a little weird?</span><span class="faq-icon" aria-hidden="true">+</span></summary>
+        <summary><span>What if my business is a little weird?</span><span class="faq-icon"><svg class="ico ico--sm"><use href="#i-plus"/></svg></span></summary>
         <div class="faq-body">Most of what makes a website work is universal. Load fast. Easy to read. Easy to contact. Tell me on the call what makes your business different and I'll account for it.</div>
       </details>
       <details class="faq-item">
-        <summary><span>Can I see examples of sites you've built?</span><span class="faq-icon" aria-hidden="true">+</span></summary>
+        <summary><span>Can I see examples of sites you've built?</span><span class="faq-icon"><svg class="ico ico--sm"><use href="#i-plus"/></svg></span></summary>
         <div class="faq-body">This brand is new and I'm building the public portfolio with the first 10 clients. The site you're reading right now and busqueneil.com are both built using this same process. Look around. That's the work.</div>
       </details>
     </div>
@@ -554,7 +692,8 @@
 <section class="section section--form" id="form">
   <div class="container container--narrow">
     <div class="section-head">
-      <h2 class="display">Pick a spot. There are 10 of them.</h2>
+      <span class="eyebrow"><span class="eyebrow__dot"></span> Claim a spot</span>
+      <h2 class="display">Pick a spot. <span class="gradient-text">There are 10 of them.</span></h2>
       <p class="section-sub">Fill out the form. I'll text or email you within a few hours to set up a 15-minute call. If we're not a fit, no hard feelings.</p>
     </div>
 
@@ -624,7 +763,7 @@
         <textarea id="notes" name="notes" rows="4"></textarea>
       </div>
 
-      <button type="submit" class="btn btn--primary btn--block btn--lg">Send it</button>
+      <button type="submit" class="btn btn--primary btn--block btn--xl">Send it <svg class="ico ico--sm"><use href="#i-arrow-right"/></svg></button>
       <p class="form-disclaimer">No spam. I'll respond within a few hours during business hours.</p>
     </form>
   </div>

@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#FAF8F4">
+<meta name="theme-color" content="#08080B">
+<meta name="color-scheme" content="dark">
 <title>Terms of Service — Neil Busque</title>
 <meta name="description" content="Terms of service for the website service offered at sites.busqueneil.com.">
 
@@ -11,30 +12,42 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="/css/style.css">
 
 <style>
-.legal {
-  padding: 80px 0 96px;
-  background: var(--cream);
+.legal { padding: 96px 0; }
+.legal h1.display { margin-bottom: 8px; }
+.legal h2 {
+  font-family: var(--font-sans);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 44px 0 14px;
+  color: var(--text-bright);
 }
-.legal h2 { font-family: var(--font-body); font-size: 22px; font-weight: 600; margin: 40px 0 12px; color: var(--ink); }
-.legal p, .legal li { font-size: 16.5px; line-height: 1.65; color: var(--ink-soft); }
+.legal p, .legal li {
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
 .legal ul { padding-left: 22px; }
-.legal a { color: var(--accent); text-decoration: underline; }
-.legal .updated { color: var(--gray); font-size: 14px; margin-bottom: 32px; }
+.legal a { color: var(--coral-bright); text-decoration: underline; }
+.legal a:hover { color: var(--coral-soft); }
+.legal .updated { color: var(--text-faint); font-size: 13.5px; margin-bottom: 36px; font-family: var(--font-mono); }
+.legal .back-link { margin-top: 56px; display: inline-block; color: var(--text-muted); font-size: 15px; }
+.legal .back-link:hover { color: var(--coral-bright); }
 </style>
 </head>
 <body>
 
 <main class="legal">
   <div class="container container--narrow">
-    <h1 class="display">Terms of Service</h1>
+    <h1 class="display">Terms of <span class="gradient-text">Service</span></h1>
     <p class="updated">Last updated: May 18, 2026</p>
 
-    <p>These terms describe the agreement between you and Neil Busque ("I", "me") when you engage me to build a website under the offer described at <strong>sites.busqueneil.com</strong>.</p>
+    <p>These terms describe the agreement between you and Neil Busque ("I", "me") when you engage me to build a website under the offer described at <strong class="text-bright">sites.busqueneil.com</strong>.</p>
 
     <h2>The offer</h2>
     <p>The service is a website build at the rate of $50 per page (during the launch window for the first 10 clients), plus an optional $50/month hosting and management plan. The build is delivered within 24 hours of approval, assuming you provide the content and feedback I need in that window.</p>
@@ -72,7 +85,7 @@
     <a href="mailto:busqueneil@gmail.com">busqueneil@gmail.com</a><br>
     <a href="https://busqueneil.com">busqueneil.com</a></p>
 
-    <p style="margin-top: 48px;"><a href="/">← Back to the offer</a></p>
+    <a href="/" class="back-link">← Back to the offer</a>
   </div>
 </main>
 

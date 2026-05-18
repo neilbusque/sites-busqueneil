@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#FAF8F4">
+<meta name="theme-color" content="#08080B">
+<meta name="color-scheme" content="dark">
 <title>Got it. Talk soon. — Neil Busque</title>
 <meta name="description" content="Your message landed. I'll be in touch within a few hours.">
 <meta name="robots" content="noindex, nofollow">
@@ -12,7 +13,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="/css/style.css">
 
@@ -23,41 +24,83 @@
   align-items: center;
   justify-content: center;
   padding: 64px 24px;
-  background: linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
-  text-align: center;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
 }
-.thank-you__inner { max-width: 620px; }
-.thank-you__check {
-  width: 72px;
-  height: 72px;
+.thank-you__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.thank-you__orb {
+  position: absolute;
+  width: 600px;
+  height: 600px;
   border-radius: 50%;
-  background: var(--accent-soft);
-  margin: 0 auto 28px;
+  filter: blur(80px);
+  background: var(--coral);
+  opacity: 0.25;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.thank-you__orb--alt {
+  background: var(--purple);
+  opacity: 0.18;
+  top: auto;
+  bottom: -200px;
+  left: 20%;
+}
+.thank-you__inner { max-width: 640px; text-align: center; position: relative; }
+.thank-you__check {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--coral-faint);
+  border: 1px solid rgba(233,79,55,0.4);
+  margin: 0 auto 32px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 0 60px rgba(233,79,55,0.4);
+  position: relative;
 }
-.thank-you__check svg { width: 36px; height: 36px; }
-.thank-you__ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 32px; }
-.thank-you__secondary { font-size: 15px; color: var(--gray); margin-top: 32px; }
+.thank-you__check::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 50%;
+  background: var(--grad-primary);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: 1px;
+  opacity: 0.6;
+}
+.thank-you__check svg { width: 40px; height: 40px; }
+.thank-you__ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 36px; }
+.thank-you__secondary { font-size: 14.5px; color: var(--text-muted); margin-top: 32px; }
 </style>
 </head>
 <body>
 
 <main class="thank-you">
+  <div class="thank-you__bg" aria-hidden="true">
+    <div class="thank-you__orb"></div>
+    <div class="thank-you__orb thank-you__orb--alt"></div>
+  </div>
   <div class="thank-you__inner">
     <div class="thank-you__check" aria-hidden="true">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-        <path d="M5 12.5l4.5 4.5L19 7.5" stroke="#E94F37" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M5 12.5l4.5 4.5L19 7.5" stroke="#FF6B4D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
-    <h1 class="display">Got it. Talk soon.</h1>
-    <p class="prose" style="font-size: 19px; color: var(--ink-soft);">
-      Your message landed in my inbox. I'll be in touch within a few hours to set up a quick call. In the meantime, here's a link to the brand site I built using the same process. It's Exhibit A.
-    </p>
+    <h1 class="display">Got it. <span class="gradient-text">Talk soon.</span></h1>
+    <p class="prose" style="font-size: 19px;">Your message landed in my inbox. I'll be in touch within a few hours to set up a quick call. In the meantime, here's a link to the brand site I built using the same process. It's Exhibit A.</p>
     <div class="thank-you__ctas">
-      <a href="https://busqueneil.com" class="btn btn--primary" target="_blank" rel="noopener">See busqueneil.com</a>
-      <a href="/" class="btn btn--ghost">Back to the offer</a>
+      <a href="https://busqueneil.com" class="btn btn--primary btn--lg" target="_blank" rel="noopener">See busqueneil.com →</a>
+      <a href="/" class="btn btn--glass btn--lg">Back to the offer</a>
     </div>
     <p class="thank-you__secondary">If anything's urgent, text or call me directly at the number I'll send in my reply email.</p>
   </div>
