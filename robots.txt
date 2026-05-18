@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /thank-you.html
+Disallow: /thank-you
+
+Sitemap: https://sites.busqueneil.com/sitemap.xml
